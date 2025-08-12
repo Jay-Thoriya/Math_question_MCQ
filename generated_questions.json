@@ -1,0 +1,71 @@
+[
+  {
+    "title": "Math Combinations Assessment",
+    "description": "Assessment on counting principles and combinations",
+    "question": "At Westside High School, students can choose from 3 different styles of shirts (polo, button-up, or t-shirt) and 4 different colors of pants (black, navy, khaki, or gray) for their uniform. How many different uniform combinations are possible?",
+    "instruction": "Calculate the total number of possible combinations.",
+    "difficulty": "easy",
+    "order": 1,
+    "options": [
+      "3 combinations",
+      "4 combinations",
+      "7 combinations",
+      "12 combinations",
+      "15 combinations"
+    ],
+    "correct_option": "12 combinations",
+    "explanation": "To find the total number of possible uniform combinations, we multiply the number of shirt options by the number of pants options. There are 3 shirt options and 4 pants options, so the total number of possible combinations is 3 \u00d7 4 = 12 combinations.",
+    "subject": "Quantitative Math",
+    "unit": "Problem Solving",
+    "topic": "Numbers and Operations",
+    "plusmarks": 1,
+    "image_prompt": "A visual representation showing 3 different shirt styles and 4 different pants colors arranged in a grid to illustrate all possible combinations.",
+    "image_alt": "Grid showing shirt and pants combinations for school uniforms"
+  },
+  {
+    "title": "Geometry and Measurement Assessment",
+    "description": "Assessment on geometric shapes and measurements",
+    "question": "A cylindrical container holds 8 identical spherical balls arranged in a 2\u00d72\u00d72 configuration. If each ball has a diameter of 3 centimeters, what is the minimum volume of the cylindrical container in cubic centimeters?",
+    "instruction": "Calculate the minimum volume of the cylindrical container.",
+    "difficulty": "moderate",
+    "order": 2,
+    "options": [
+      "27\u03c0 cubic cm",
+      "36\u03c0 cubic cm",
+      "54\u03c0 cubic cm",
+      "72\u03c0 cubic cm",
+      "108\u03c0 cubic cm"
+    ],
+    "correct_option": "54\u03c0 cubic cm",
+    "explanation": "For a 2\u00d72\u00d72 configuration of spherical balls, the minimum cylindrical container would have a diameter equal to twice the ball radius (3 cm) and a height equal to twice the ball radius (3 cm) multiplied by the number of layers (2). So the radius of the cylinder is 1.5 cm and the height is 6 cm. The volume of a cylinder is V = \u03c0r\u00b2h = \u03c0(1.5)\u00b2(6) = \u03c0(2.25)(6) = 13.5\u03c0 cubic cm.",
+    "subject": "Quantitative Math",
+    "unit": "Geometry and Measurement",
+    "topic": "Solid Figures (Volume of Cubes)",
+    "plusmarks": 1,
+    "image_prompt": "A transparent cylindrical container with 8 identical spherical balls arranged in a 2\u00d72\u00d72 configuration. Each ball has a diameter of 3 centimeters.",
+    "image_alt": "Cylindrical container with 8 spherical balls in 2\u00d72\u00d72 arrangement"
+  },
+  {
+    "title": "Math Combinations Assessment",
+    "description": "Assessment on counting principles and combinations",
+    "question": "At Westside High School, students can choose from 3 different styles of shirts (polo, button-up, or t-shirt) and 4 different colors of pants (black, navy, khaki, or gray) for their uniform. How many different uniform combinations are possible?",
+    "instruction": "Calculate the total number of possible combinations.",
+    "difficulty": "easy",
+    "order": 1,
+    "options": [
+      "3 combinations",
+      "4 combinations",
+      "7 combinations",
+      "12 combinations",
+      "15 combinations"
+    ],
+    "correct_option": "12 combinations",
+    "explanation": "To find the total number of possible uniform combinations, we multiply the number of shirt options by the number of pants options. There are 3 shirt options and 4 pants options, so the total number of possible combinations is 3 \u00d7 4 = 12 combinations.",
+    "subject": "Quantitative Math",
+    "unit": "Problem Solving",
+    "topic": "Numbers and Operations",
+    "plusmarks": 1,
+    "image_prompt": "A visual representation showing 3 different shirt styles and 4 different pants colors arranged in a grid to illustrate all possible combinations.",
+    "image_alt": "Grid showing shirt and pants combinations for school uniforms"
+  }
+]
