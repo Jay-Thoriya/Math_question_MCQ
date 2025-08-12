@@ -4,7 +4,7 @@ import google.generativeai as genai
 from typing import List, Dict, Any, Optional
 
 # Configure the Gemini API
-API_KEY = "AIzaSyCNxmSW4VvWQBiLDoAtZRz2ZRo1miuYRj8"
+API_KEY = "ADD YOUR GEMINI API KEY HERE"
 genai.configure(api_key=API_KEY)
 
 # Define the allowed curriculum options
