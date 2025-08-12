@@ -237,52 +237,78 @@ def generate_image_prompt(question_data: Dict[str, Any]) -> str:
     return response.text.strip()
 
 # Function to create sample questions without using the API
-def create_sample_questions() -> List[Dict[str, Any]]:
+def create_sample_questions(with_image=True) -> List[Dict[str, Any]]:
     """
     Create sample questions without using the API.
     This is useful for testing and demonstration purposes.
     
+    Args:
+        with_image: Whether to include image prompts in the questions
+        
     Returns:
         List of sample question objects
     """
-    sample_questions = [
-        {
-            "title": "Math Combinations Assessment",
-            "description": "Assessment on counting principles and combinations",
-            "question": "At Westside High School, students can choose from 3 different styles of shirts (polo, button-up, or t-shirt) and 4 different colors of pants (black, navy, khaki, or gray) for their uniform. How many different uniform combinations are possible?",
-            "instruction": "Calculate the total number of possible combinations.",
-            "difficulty": "easy",
-            "order": 1,
-            "options": ["3 combinations", "4 combinations", "7 combinations", "12 combinations", "15 combinations"],
-            "correct_option": "12 combinations",
-            "explanation": "To find the total number of possible uniform combinations, we multiply the number of shirt options by the number of pants options. There are 3 shirt options and 4 pants options, so the total number of possible combinations is 3 × 4 = 12 combinations.",
-            "subject": "Quantitative Math",
-            "unit": "Problem Solving",
-            "topic": "Numbers and Operations",
-            "plusmarks": 1,
-            "image_prompt": "A visual representation showing 3 different shirt styles and 4 different pants colors arranged in a grid to illustrate all possible combinations.",
-            "image_alt": "Grid showing shirt and pants combinations for school uniforms"
-        },
-        {
-            "title": "Geometry and Measurement Assessment",
-            "description": "Assessment on geometric shapes and measurements",
-            "question": "A cylindrical container holds 8 identical spherical balls arranged in a 2×2×2 configuration. If each ball has a diameter of 3 centimeters, what is the minimum volume of the cylindrical container in cubic centimeters?",
-            "instruction": "Calculate the minimum volume of the cylindrical container.",
-            "difficulty": "moderate",
-            "order": 2,
-            "options": ["27π cubic cm", "36π cubic cm", "54π cubic cm", "72π cubic cm", "108π cubic cm"],
-            "correct_option": "54π cubic cm",
-            "explanation": "For a 2×2×2 configuration of spherical balls, the minimum cylindrical container would have a diameter equal to twice the ball radius (3 cm) and a height equal to twice the ball radius (3 cm) multiplied by the number of layers (2). So the radius of the cylinder is 1.5 cm and the height is 6 cm. The volume of a cylinder is V = πr²h = π(1.5)²(6) = π(2.25)(6) = 13.5π cubic cm.",
-            "subject": "Quantitative Math",
-            "unit": "Geometry and Measurement",
-            "topic": "Solid Figures (Volume of Cubes)",
-            "plusmarks": 1,
-            "image_prompt": "A transparent cylindrical container with 8 identical spherical balls arranged in a 2×2×2 configuration. Each ball has a diameter of 3 centimeters.",
-            "image_alt": "Cylindrical container with 8 spherical balls in 2×2×2 arrangement"
-        }
-    ]
+    # Question with image
+    question_with_image = {
+        "title": "Math Combinations Assessment",
+        "description": "Assessment on counting principles and combinations",
+        "question": "At Westside High School, students can choose from 3 different styles of shirts (polo, button-up, or t-shirt) and 4 different colors of pants (black, navy, khaki, or gray) for their uniform. How many different uniform combinations are possible?",
+        "instruction": "Calculate the total number of possible combinations.",
+        "difficulty": "easy",
+        "order": 1,
+        "options": ["3 combinations", "4 combinations", "7 combinations", "12 combinations", "15 combinations"],
+        "correct_option": "12 combinations",
+        "explanation": "To find the total number of possible uniform combinations, we multiply the number of shirt options by the number of pants options. There are 3 shirt options and 4 pants options, so the total number of possible combinations is 3 × 4 = 12 combinations.",
+        "subject": "Quantitative Math",
+        "unit": "Problem Solving",
+        "topic": "Numbers and Operations",
+        "plusmarks": 1,
+        "image_prompt": "A visual representation showing 3 different shirt styles and 4 different pants colors arranged in a grid to illustrate all possible combinations.",
+        "image_alt": "Grid showing shirt and pants combinations for school uniforms"
+    }
     
-    return sample_questions
+    # Question without image
+    question_without_image = {
+        "title": "Basic Algebra Assessment",
+        "description": "Assessment on algebraic expressions and equations",
+        "question": "If 3x + 7 = 22, what is the value of x?",
+        "instruction": "Solve for the value of x in the given equation.",
+        "difficulty": "easy",
+        "order": 1,
+        "options": ["3", "5", "7", "15"],
+        "correct_option": "5",
+        "explanation": "To solve for x, we need to isolate it by performing the same operations on both sides of the equation. First, subtract 7 from both sides: 3x + 7 - 7 = 22 - 7, which gives us 3x = 15. Then, divide both sides by 3: 3x/3 = 15/3, which gives us x = 5.",
+        "subject": "Quantitative Math",
+        "unit": "Algebra",
+        "topic": "Algebraic Word Problems",
+        "plusmarks": 1,
+        "image_prompt": "",
+        "image_alt": ""
+    }
+    
+    # Question with image (second example)
+    question_with_image2 = {
+        "title": "Geometry and Measurement Assessment",
+        "description": "Assessment on geometric shapes and measurements",
+        "question": "A cylindrical container holds 8 identical spherical balls arranged in a 2×2×2 configuration. If each ball has a diameter of 3 centimeters, what is the minimum volume of the cylindrical container in cubic centimeters?",
+        "instruction": "Calculate the minimum volume of the cylindrical container.",
+        "difficulty": "moderate",
+        "order": 2,
+        "options": ["27π cubic cm", "36π cubic cm", "54π cubic cm", "72π cubic cm", "108π cubic cm"],
+        "correct_option": "54π cubic cm",
+        "explanation": "For a 2×2×2 configuration of spherical balls, the minimum cylindrical container would have a diameter equal to twice the ball radius (3 cm) and a height equal to twice the ball radius (3 cm) multiplied by the number of layers (2). So the radius of the cylinder is 1.5 cm and the height is 6 cm. The volume of a cylinder is V = πr²h = π(1.5)²(6) = π(2.25)(6) = 13.5π cubic cm.",
+        "subject": "Quantitative Math",
+        "unit": "Geometry and Measurement",
+        "topic": "Solid Figures (Volume of Cubes)",
+        "plusmarks": 1,
+        "image_prompt": "A transparent cylindrical container with 8 identical spherical balls arranged in a 2×2×2 configuration. Each ball has a diameter of 3 centimeters.",
+        "image_alt": "Cylindrical container with 8 spherical balls in 2×2×2 arrangement"
+    }
+    
+    if with_image:
+        return [question_with_image, question_with_image2]
+    else:
+        return [question_without_image]
 
 # Main function to generate questions
 def main():
@@ -294,6 +320,8 @@ def main():
     parser.add_argument('-o', '--output', type=str, default='generated_questions.json', help='Output file path (default: generated_questions.json)')
     parser.add_argument('-s', '--sample', action='store_true', help='Use sample questions instead of API generation')
     parser.add_argument('-v', '--verbose', action='store_true', help='Show verbose output')
+    parser.add_argument('-i', '--image', action='store_true', help='Generate questions with image prompts')
+    parser.add_argument('--no-image', action='store_true', help='Generate questions without image prompts')
     
     args = parser.parse_args()
     
@@ -301,16 +329,23 @@ def main():
     base_questions = [BASE_QUESTION_1, BASE_QUESTION_2]
     num_questions_to_generate = args.num
     
-    print(f"Generating {num_questions_to_generate} new math questions...")
+    # Determine if we should include images
+    with_image = True  # Default is to include images
+    if args.no_image:
+        with_image = False
+    elif args.image:
+        with_image = True
+    
+    print(f"Generating {num_questions_to_generate} new math questions{'with images' if with_image else 'without images'}...")
     generated_questions = []
     
     # Use sample questions if requested
     if args.sample:
         print("Using sample questions as requested.")
-        generated_questions = create_sample_questions()
+        generated_questions = create_sample_questions(with_image=with_image)
         # If we need more questions than we have samples, duplicate the samples
         while len(generated_questions) < num_questions_to_generate:
-            generated_questions.extend(create_sample_questions())
+            generated_questions.extend(create_sample_questions(with_image=with_image))
         # Trim to the requested number
         generated_questions = generated_questions[:num_questions_to_generate]
     else:
@@ -322,25 +357,30 @@ def main():
                     print(f"Generating question {i+1}/{num_questions_to_generate}...")
                 questions = generate_question(base_questions)
                 if questions:
+                    # If no-image is specified, remove image prompts
+                    if not with_image:
+                        for q in questions:
+                            q['image_prompt'] = ""
+                            q['image_alt'] = ""
                     generated_questions.extend(questions)
                     
             # If we couldn't generate any questions or got duplicates, use sample questions
             if not generated_questions or (len(generated_questions) > 1 and 
                                           all(generated_questions[0]['question'] == q['question'] for q in generated_questions[1:])):
                 print("API generation failed or returned duplicates. Using sample questions instead.")
-                generated_questions = create_sample_questions()
+                generated_questions = create_sample_questions(with_image=with_image)
                 # If we need more questions than we have samples, duplicate the samples
                 while len(generated_questions) < num_questions_to_generate:
-                    generated_questions.extend(create_sample_questions())
+                    generated_questions.extend(create_sample_questions(with_image=with_image))
                 # Trim to the requested number
                 generated_questions = generated_questions[:num_questions_to_generate]
         except Exception as e:
             print(f"Error using API: {e}")
             print("Using sample questions instead.")
-            generated_questions = create_sample_questions()
+            generated_questions = create_sample_questions(with_image=with_image)
             # If we need more questions than we have samples, duplicate the samples
             while len(generated_questions) < num_questions_to_generate:
-                generated_questions.extend(create_sample_questions())
+                generated_questions.extend(create_sample_questions(with_image=with_image))
             # Trim to the requested number
             generated_questions = generated_questions[:num_questions_to_generate]
     

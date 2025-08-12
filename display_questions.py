@@ -33,8 +33,11 @@ def display_question(question, question_number=1):
     print(f"\nExplanation: {question['explanation']}")
     
     # Display image information
-    if question.get('image_prompt'):
+    if question.get('image_prompt') and question.get('image_alt'):
         print(f"\nImage Description: {question['image_alt']}")
+        print("(Note: This question includes an image prompt that could be used to generate an actual image)")
+    else:
+        print("\n(This question does not include an image)")
 
 def main():
     # Check if a file was provided as an argument

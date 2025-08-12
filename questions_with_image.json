@@ -1,0 +1,25 @@
+[
+  {
+    "title": "Math Combinations Assessment",
+    "description": "Assessment on counting principles and combinations",
+    "question": "At Westside High School, students can choose from 3 different styles of shirts (polo, button-up, or t-shirt) and 4 different colors of pants (black, navy, khaki, or gray) for their uniform. How many different uniform combinations are possible?",
+    "instruction": "Calculate the total number of possible combinations.",
+    "difficulty": "easy",
+    "order": 1,
+    "options": [
+      "3 combinations",
+      "4 combinations",
+      "7 combinations",
+      "12 combinations",
+      "15 combinations"
+    ],
+    "correct_option": "12 combinations",
+    "explanation": "To find the total number of possible uniform combinations, we multiply the number of shirt options by the number of pants options. There are 3 shirt options and 4 pants options, so the total number of possible combinations is 3 \u00d7 4 = 12 combinations.",
+    "subject": "Quantitative Math",
+    "unit": "Problem Solving",
+    "topic": "Numbers and Operations",
+    "plusmarks": 1,
+    "image_prompt": "A visual representation showing 3 different shirt styles and 4 different pants colors arranged in a grid to illustrate all possible combinations.",
+    "image_alt": "Grid showing shirt and pants combinations for school uniforms"
+  }
+]

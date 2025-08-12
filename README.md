@@ -38,11 +38,13 @@ python mcq_generator.py [options]
 - `-o, --output FILE`: Output file path (default: generated_questions.json)
 - `-s, --sample`: Use sample questions instead of API generation
 - `-v, --verbose`: Show verbose output including example generated question
+- `-i, --image`: Generate questions with image prompts (default behavior)
+- `--no-image`: Generate questions without image prompts
 
 ### Examples
 
 ```bash
-# Generate 2 questions using the API (default)
+# Generate 2 questions using the API (default, with images)
 python mcq_generator.py
 
 # Generate 5 questions using sample questions
@@ -50,6 +52,12 @@ python mcq_generator.py -s -n 5
 
 # Generate 3 questions and save to custom file with verbose output
 python mcq_generator.py -n 3 -o custom_questions.json -v
+
+# Generate 1 question without image prompts
+python mcq_generator.py -n 1 --no-image -o questions_without_image.json
+
+# Generate 1 question explicitly with image prompts
+python mcq_generator.py -n 1 -i -o questions_with_image.json
 ```
 
 The script will:
